@@ -40,6 +40,7 @@ Each release contains:
 * Linux static binaries (tar.gz) for amd64, arm64, and armv7
 * Debian (.deb) and RPM (.rpm) packages for the same architectures
 * Windows binaries (zip) for amd64 and arm64
+* macOS binaries (tar.gz) for amd64 and arm64
 * `checksums.txt` with SHA-256 checksums of the above
 
 Each release also pushes container images (amd64 and arm64) to

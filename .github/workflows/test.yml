@@ -68,12 +68,13 @@ jobs:
       # Cross-build every GoReleaser release target with the release
       # build tags, using build-tags.txt the same way third-party
       # packagers do. (A test keeps that file in sync with
-      # internal/buildtags.ReleaseTags; darwin builds are covered by
-      # the macOS test job, whose e2e tests build a tagged binary.)
+      # internal/buildtags.ReleaseTags.
       - name: cross-build cmd/tailcat with release build tags
         run: |
           tags=$(cat build-tags.txt)
           echo "release tags: $tags"
+          GOOS=darwin  GOARCH=amd64         go build -o /dev/null -tags "$tags" ./cmd/tailcat
+          GOOS=darwin  GOARCH=arm64         go build -o /dev/null -tags "$tags" ./cmd/tailcat
           GOOS=linux   GOARCH=amd64         go build -o /dev/null -tags "$tags" ./cmd/tailcat
           GOOS=linux   GOARCH=arm64         go build -o /dev/null -tags "$tags" ./cmd/tailcat
           GOOS=linux   GOARCH=arm  GOARM=7  go build -o /dev/null -tags "$tags" ./cmd/tailcat

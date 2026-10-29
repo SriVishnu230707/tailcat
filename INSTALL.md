@@ -8,8 +8,8 @@ tailcat is and how to use it, see the [README](./README.md).
 Prebuilt binaries are on the
 [Releases page](https://github.com/tailscale/tailcat/releases): static
 Linux binaries (tar.gz) plus Debian (.deb) and RPM (.rpm) packages for
-amd64, arm64, and armv7, and Windows binaries (zip) for amd64 and
-arm64.
+amd64, arm64, and armv7; macOS binaries (tar.gz) for amd64 and arm64;
+and Windows binaries (zip) for amd64 and arm64.
 
 ## Homebrew (macOS)
 
